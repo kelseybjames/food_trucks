@@ -1,4 +1,4 @@
-var getTrucksURL = 'http://localhost:3000/trucks.json';
+var getTrucksURL = 'https://kelsey-food-trucks.herokuapp.com/trucks.json';
 
 var getTruck = function(truck, map, meters, origin) {
   console.log('got here');
