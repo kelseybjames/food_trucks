@@ -25,11 +25,12 @@ var getTruck = function(truck, map, origin, radius) {
       hours: truckHours
     });
 
-    var modalString = 'Address: ' + newMarker.address + '\nName: ' + newMarker.title + '\nHours: ' + newMarker.hours + '\nFood: ' + newMarker.food;
+    var modalString = 'Address: ' + newMarker.address + '\nHours: ' + newMarker.hours + '\nFood: ' + newMarker.food;
 
     newMarker.addListener('click', function() {
       console.log('modal triggered');
-      truckModal.innerHTML = modalString;
+      $('#truckModalName').text(newMarker.title);
+      $('#truckModalBody').text(modalString);
       console.log(modalString);
       truckModal.style.display = 'block';
     });
