@@ -23,5 +23,6 @@ html, body {
 .truck-info {
   width: 80%;
   border: 1px solid #AAA;
-  margin: 5px;
+  margin: 20px 10%;
+  border-radius: 5px;
 }
