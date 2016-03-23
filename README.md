@@ -16,7 +16,7 @@ Getting started
 ---------------
 You can visit the deployed site here: [SF Food Trucks](https://kelsey-food-trucks.herokuapp.com/)
 
-You'll see a page with an embedded map. The default marker is located at the Embarcadero BART Station, but clicking anywhere on the map will relocate the marker and recenter the map.
+You'll see a page with an embedded map. The default yellow marker indicating your position is located at the Embarcadero BART Station, but clicking anywhere on the map will relocate the marker and recenter the map.
 
 Once the marker is set at the desired location, type the desired search radius (in meters) into the form below the map and click 'Search for Food Trucks'.
 
