@@ -1,15 +1,13 @@
 var getTrucksURL = 'https://kelsey-food-trucks.herokuapp.com//trucks.json';
 
-var getTruck = function(truck, map, meters, origin) {
-  console.log('got here');
+var getTruck = function(truck, map, radius, origin) {
   var latitude = Number(truck['latitude']);
   var longitude = Number(truck['longitude']);
   var position = new google.maps.LatLng(latitude, longitude)
-  console.log(position);
   var name = truck['name'];
   var distance = google.maps.geometry.spherical.computeDistanceBetween(position, origin);
   console.log(distance);
-  if (distance < meters) {
+  if (distance < radius) {
     var newMarker = new google.maps.Marker({
       map: map,
       position: position,
@@ -21,12 +19,12 @@ var getTruck = function(truck, map, meters, origin) {
 var getTrucks = function(map, origin) {
   $.get(getTrucksURL, function(trucks) {
     trucks.forEach(function(truck) {
-      getTruck(truck, map, 200, origin);
+      getTruck(truck, map, radius, origin);
     })
   })
 };
 
-function initMap() {
+function initMap(radius) {
   // Embarcadero BART Station coordinates
   var myLatLng = new google.maps.LatLng(37.7936, -122.3958);
 
@@ -44,5 +42,5 @@ function initMap() {
     title: 'Embarcadero BART Station'
   });
 
-  getTrucks(map, myLatLng);
+  getTrucks(map, myLatLng, radius);
 }

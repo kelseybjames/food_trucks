@@ -1,2 +1,4 @@
 console.log('got here');
-$('.test').text(<%= @origin.radius %>);
+var radius = <%= @origin.radius %>;
+
+initMap(radius);
