@@ -16,6 +16,10 @@ var getTruck = function(truck, map, origin, radius) {
       position: truckPosition,
       title: truckName
     });
+
+    newMarker.addListener('click', function() {
+      console.log('Clicked tag ' + newMarker.title);
+    })
   };
 };
 
@@ -51,8 +55,5 @@ function initMap(radius) {
   });
 
   getTrucks(map, myLatLng, radius);
-
   getClickCoords(map);
-
-  console.log(map);
 };
