@@ -30,6 +30,7 @@ var getTruck = function(truck, map, origin, radius) {
     newMarker.addListener('click', function() {
       console.log('modal triggered');
       truckModal.innerHTML = modalString;
+      console.log(modalString);
       truckModal.style.display = 'block';
     });
 
