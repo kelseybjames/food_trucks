@@ -24,6 +24,13 @@ var getTrucks = function(map, origin) {
   })
 };
 
+var getClickCoords = function() {
+  google.maps.event.addListener(map, 'click', function(event) {
+    return event.latLng;
+  });
+}
+
+
 function initMap(radius) {
   // Embarcadero BART Station coordinates
   var myLatLng = new google.maps.LatLng(37.7936, -122.3958);
