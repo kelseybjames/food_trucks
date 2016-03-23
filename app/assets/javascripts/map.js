@@ -1,5 +1,5 @@
 var getTrucksURL = 'https://kelsey-food-trucks.herokuapp.com//trucks.json';
-var yellowTag = 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png';
+var yellowTag = 'https://maps.google.com/mapfiles/ms/icons/yellow-dot.png';
 
 // Embarcadero BART Station coordinates
 var latitude = 37.7936;
