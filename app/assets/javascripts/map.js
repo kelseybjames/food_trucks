@@ -5,6 +5,7 @@ var latitude = 37.7936;
 var longitude = -122.3958;
 
 var getTruck = function(truck, map, radius, origin) {
+  console.log('got to getTruck');
   var truckLatitude = Number(truck['latitude']);
   var truckLongitude = Number(truck['longitude']);
   var truckPosition = new google.maps.LatLng(truckLatitude, truckLongitude)
@@ -21,6 +22,7 @@ var getTruck = function(truck, map, radius, origin) {
 };
 
 var getTrucks = function(map, origin, radius) {
+  console.log('got to getTrucks');
   $.get(getTrucksURL, function(trucks) {
     trucks.forEach(function(truck) {
       getTruck(truck, map, origin, radius);
