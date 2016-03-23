@@ -12,7 +12,7 @@ var getTruck = function(truck, map, origin, radius) {
   var truckFood = truck['food_items'];
   var truckAddress = truck['address'];
   var truckName = truck['name'];
-  var truckModal = document.getElementById('truckModal');
+  var $truckModal = $('#truckModal');
   var truckModalClose = document.getElementsByClassName("close")[0];
   var distance = google.maps.geometry.spherical.computeDistanceBetween(truckPosition, origin);
   if (distance < radius) {
@@ -32,7 +32,7 @@ var getTruck = function(truck, map, origin, radius) {
       $('#truckModalName').text(newMarker.title);
       $('#truckModalBody').text(modalString);
       console.log(modalString);
-      truckModal.style.display = 'block';
+      $truckModal.modal('show');
     });
 
     truckModalClose.addEventListener('click', function() {
