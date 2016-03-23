@@ -5,17 +5,17 @@ var latitude = 37.7936;
 var longitude = -122.3958;
 
 var getTruck = function(truck, map, radius, origin) {
-  var latitude = Number(truck['latitude']);
-  var longitude = Number(truck['longitude']);
-  var position = new google.maps.LatLng(latitude, longitude)
-  var name = truck['name'];
-  var distance = google.maps.geometry.spherical.computeDistanceBetween(position, origin);
+  var truckLatitude = Number(truck['latitude']);
+  var truckLongitude = Number(truck['longitude']);
+  var truckPosition = new google.maps.LatLng(truckLatitude, truckLongitude)
+  var truckName = truck['name'];
+  var distance = google.maps.geometry.spherical.computeDistanceBetween(truckPosition, origin);
   console.log(distance);
   if (distance < radius) {
     var newMarker = new google.maps.Marker({
       map: map,
-      position: position,
-      title: name
+      position: truckPosition,
+      title: truckName
     });
   };
 };
@@ -50,7 +50,7 @@ function initMap(radius) {
   var marker = new google.maps.Marker({
     map: map,
     position: myLatLng,
-    title: 'Embarcadero BART Station'
+    title: 'Your Location'
   });
 
   getTrucks(map, myLatLng, radius);
