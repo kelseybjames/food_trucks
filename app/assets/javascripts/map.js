@@ -28,7 +28,7 @@ var getTruck = function(truck, map, origin, radius) {
     var modalString = 'Address: ' + newMarker.address + '\nHours: ' + newMarker.hours + '\nFood: ' + newMarker.food;
 
     newMarker.addListener('click', function() {
-      console.log('info display triggered');
+      $('#truck-container').show();
       $('#truckName').text('Name: ' + newMarker.title);
       $('#truckAddress').text('Address: ' + newMarker.address);
       $('#truckHours').text('Hours: ' + newMarker.hours);
@@ -70,7 +70,9 @@ function initMap(radius) {
 
   google.maps.event.addListener(map, 'click', function(event) {
     marker.setPosition(event.latLng);
-    map.panTo(event.latLng);
+    setTimeout(function() {
+      map.panTo(event.latLng);
+    }, 1000);
   });
 
   getTrucks(map, myLatLng, radius);
