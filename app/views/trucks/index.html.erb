@@ -7,16 +7,5 @@
     <div id='map'></div>
   </div>
 
-  <div class='row'>
-    <div class='col-sm-6 col-sm-offset-3>'
-      <%= form_for @origin, remote: true do |f| %>
-        <%= f.label :radius, 'Radius:' %>
-        <div class='input-group'>
-          <%= f.text_field :radius, class: 'form-control' %>
-          <div class="input-group-addon">meters</div>
-        </div>
-        <%= f.submit 'Search for Food Trucks', class: 'btn btn-default', id: 'truck-search' %>
-      <% end %>
-    </div>
-  </div>
+  <%= render partial: 'radius_form', locals: {origin: @origin} %>
 </div>
