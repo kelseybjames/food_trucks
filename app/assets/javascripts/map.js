@@ -32,7 +32,7 @@ var getTruck = function(truck, map, origin, radius) {
       $('#truckName').text('Name: ' + newMarker.title);
       $('#truckAddress').text('Address: ' + newMarker.address);
       $('#truckHours').text('Hours: ' + newMarker.hours);
-      $('#truckFoods').text('Address: ' + newMarker.food);
+      $('#truckFoods').text('Food: ' + newMarker.food);
     });
   };
 };

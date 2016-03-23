@@ -19,3 +19,9 @@ html, body {
   height: 400px;
   margin: 5px;
 }
+
+.truck-info {
+  width: 80%;
+  border: 1px solid #AAA;
+  margin: 5px;
+}
