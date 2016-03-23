@@ -12,8 +12,8 @@ var getTruck = function(truck, map, origin, radius) {
   var truckFood = truck['food_items'];
   var truckAddress = truck['address'];
   var truckName = truck['name'];
-  var truckModal = $('#truckModal');
-  var truckModalClose = $('.close')[0];
+  var truckModal = document.getElementById('truckModal');
+  var truckModalClose = document.getElementsByClassName("close")[0];
   var distance = google.maps.geometry.spherical.computeDistanceBetween(truckPosition, origin);
   if (distance < radius) {
     var newMarker = new google.maps.Marker({
