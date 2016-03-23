@@ -28,6 +28,7 @@ var getTruck = function(truck, map, origin, radius) {
     var modalString = 'Address: ' + newMarker.address + '\nName: ' + newMarker.name + '\nHours: ' + newMarker.hours + '\nFood: ' + newMarker.food;
 
     newMarker.addListener('click', function() {
+      console.log('modal triggered');
       truckModal.innerHTML = modalString;
       truckModal.style.display = 'block';
     });
