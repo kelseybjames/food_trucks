@@ -12,6 +12,8 @@ var getTruck = function(truck, map, origin, radius) {
   var truckFood = truck['food_items'];
   var truckAddress = truck['address'];
   var truckName = truck['name'];
+  var truckModal = $('#truckModal');
+  var truckModalClose = $('.close')[0];
   var distance = google.maps.geometry.spherical.computeDistanceBetween(truckPosition, origin);
   if (distance < radius) {
     var newMarker = new google.maps.Marker({
@@ -23,12 +25,22 @@ var getTruck = function(truck, map, origin, radius) {
       hours: truckHours
     });
 
+    var modalString = 'Address: ' + newMarker.address + '\nName: ' + newMarker.name + '\nHours: ' + newMarker.hours + '\nFood: ' + newMarker.food;
+
     newMarker.addListener('click', function() {
-      console.log('Clicked tag ' + newMarker.title);
-      console.log('Hours: ' + newMarker.hours);
-      console.log('Food: ' + newMarker.food);
-      console.log('Address: ' + newMarker.address);
-    })
+      truckModal.text(modalString);
+      truckModal.style.display = 'block';
+    });
+
+    truckModalClose.on('click', function() {
+      truckModal.style.display = 'none';
+    });
+
+    window.on('click', function(event) {
+      if (event.target !== truckModal) {
+        truckModal.style.display = "none";
+      };
+    });
   };
 };
 
