@@ -1,5 +1,8 @@
 var getTrucksURL = 'https://kelsey-food-trucks.herokuapp.com//trucks.json';
 
+// Embarcadero BART Station coordinates
+var myLatLng = new google.maps.LatLng(37.7936, -122.3958);
+
 var getTruck = function(truck, map, radius, origin) {
   var latitude = Number(truck['latitude']);
   var longitude = Number(truck['longitude']);
@@ -24,16 +27,13 @@ var getTrucks = function(map, origin) {
   })
 };
 
-var getClickCoords = function() {
+var getClickCoords = function(map) {
   google.maps.event.addListener(map, 'click', function(event) {
-    return event.latLng;
+    myLatLng = event.latLng;
   });
 }
 
-function initMap(radius) {
-  // Embarcadero BART Station coordinates
-  var myLatLng = new google.maps.LatLng(37.7936, -122.3958);
-
+$(document).ready(function initMap(radius) {
   // Create a map object and specify the DOM element for display.
   var map = new google.maps.Map(document.getElementById('map'), {
     center: myLatLng,
@@ -49,4 +49,6 @@ function initMap(radius) {
   });
 
   getTrucks(map, myLatLng, radius);
-}
+
+  getClickCoords(map);
+});

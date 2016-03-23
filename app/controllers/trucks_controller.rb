@@ -9,12 +9,6 @@ class TrucksController < ApplicationController
     end
   end
 
-  def create
-    respond_to do |format|
-      format.js {}
-    end
-  end
-
   private
 
 end
