@@ -68,6 +68,10 @@ function initMap(radius) {
     title: 'Your Location'
   });
 
+  google.maps.event.addListener(map, 'click', function(event) {
+    marker.position = event.latLng;
+  });
+
   getTrucks(map, myLatLng, radius);
   getClickCoords(map);
 };
