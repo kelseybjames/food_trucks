@@ -8,9 +8,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
   <!-- Google Maps javascript -->
-  <%= render partial: 'map_script' %>
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="   crossorigin="anonymous"></script>
+  <%= render partial: 'map_script' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
