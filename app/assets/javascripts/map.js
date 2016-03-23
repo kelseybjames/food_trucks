@@ -27,22 +27,12 @@ var getTruck = function(truck, map, origin, radius) {
 
     var modalString = 'Address: ' + newMarker.address + '\nHours: ' + newMarker.hours + '\nFood: ' + newMarker.food;
 
-    newMarker.addListener('click', jQuery(function($) {
-      console.log('modal triggered');
-      $('#truckModalName').text(newMarker.title);
-      $('#truckModalBody').text(modalString);
-      console.log(modalString);
-      $truckModal.modal('show');
-    }));
-
-    truckModalClose.addEventListener('click', function() {
-      truckModal.style.display = 'none';
-    });
-
-    window.addEventListener('click', function(event) {
-      if (event.target !== truckModal) {
-        truckModal.style.display = 'none';
-      };
+    newMarker.addListener('click', function() {
+      console.log('info display triggered');
+      $('#truckName').text('Name: ' + newMarker.title);
+      $('#truckAddress').text('Address: ' + newMarker.address);
+      $('#truckHours').text('Hours: ' + newMarker.hours);
+      $('#truckFoods').text('Address: ' + newMarker.food);
     });
   };
 };
