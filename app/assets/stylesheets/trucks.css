@@ -8,6 +8,14 @@ html, body {
   padding: 0;
 }
 
+#map-container {
+  border: 1px solid #AAA;
+  border-radius: 5px;
+  margin: 20px 10%;
+  box-shadow: 2px 2px #EEE;
+}
+
 #map {
   height: 400px;
+  margin: 5px;
 }

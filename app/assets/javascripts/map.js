@@ -1,4 +1,4 @@
-var getTrucksURL = 'https://kelsey-food-trucks.herokuapp.com/trucks.json';
+var getTrucksURL = 'https://kelsey-food-trucks.herokuapp.com//trucks.json';
 
 var getTruck = function(truck, map, meters, origin) {
   console.log('got here');
@@ -33,7 +33,7 @@ function initMap() {
   // Create a map object and specify the DOM element for display.
   var map = new google.maps.Map(document.getElementById('map'), {
     center: myLatLng,
-    scrollwheel: true,
+    scrollwheel: false,
     zoom: 15
   });
 
