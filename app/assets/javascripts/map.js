@@ -28,6 +28,7 @@ var getTruck = function(truck, map, origin, radius) {
     var modalString = 'Address: ' + newMarker.address + '\nHours: ' + newMarker.hours + '\nFood: ' + newMarker.food;
 
     newMarker.addListener('click', function() {
+      jQuery.noConflict();
       console.log('modal triggered');
       $('#truckModalName').text(newMarker.title);
       $('#truckModalBody').text(modalString);
