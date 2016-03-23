@@ -8,17 +8,26 @@ var getTruck = function(truck, map, origin, radius) {
   var truckLatitude = Number(truck['latitude']);
   var truckLongitude = Number(truck['longitude']);
   var truckPosition = new google.maps.LatLng(truckLatitude, truckLongitude);
+  var truckHours = truck['days_hours'];
+  var truckFood = truck['food_items'];
+  var truckAddress = truck['address'];
   var truckName = truck['name'];
   var distance = google.maps.geometry.spherical.computeDistanceBetween(truckPosition, origin);
   if (distance < radius) {
     var newMarker = new google.maps.Marker({
       map: map,
       position: truckPosition,
-      title: truckName
+      title: truckName,
+      address: truckAddress,
+      food: truckFood,
+      hours: truckHours
     });
 
     newMarker.addListener('click', function() {
       console.log('Clicked tag ' + newMarker.title);
+      console.log('Hours: ' + newMarker.hours);
+      console.log('Food: ' + newMarker.food);
+      console.log('Address: ' + newMarker.address);
     })
   };
 };
