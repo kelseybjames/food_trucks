@@ -20,9 +20,13 @@ html, body {
   margin: 5px;
 }
 
-.truck-info {
-  width: 80%;
+#truck-container {
   border: 1px solid #AAA;
-  margin: 20px 10%;
   border-radius: 5px;
+  margin: 20px 10%;
+  box-shadow: 2px 2px #EEE;
+}
+
+#truck-info {
+  margin: 5px;
 }
