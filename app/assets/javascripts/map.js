@@ -27,14 +27,13 @@ var getTruck = function(truck, map, origin, radius) {
 
     var modalString = 'Address: ' + newMarker.address + '\nHours: ' + newMarker.hours + '\nFood: ' + newMarker.food;
 
-    newMarker.addListener('click', function() {
-      jQuery.noConflict();
+    newMarker.addListener('click', jQuery(function($) {
       console.log('modal triggered');
       $('#truckModalName').text(newMarker.title);
       $('#truckModalBody').text(modalString);
       console.log(modalString);
       $truckModal.modal('show');
-    });
+    }));
 
     truckModalClose.addEventListener('click', function() {
       truckModal.style.display = 'none';
