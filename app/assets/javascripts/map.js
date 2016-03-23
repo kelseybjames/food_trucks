@@ -9,7 +9,7 @@ var getTruck = function(truck, map, origin, radius) {
   var truckLongitude = Number(truck['longitude']);
   var truckPosition = new google.maps.LatLng(truckLatitude, truckLongitude);
   var truckHours = truck['days_hours'];
-  var truckFood = truck['food_items'];
+  var truckFood = truck['food_items'].replace(':', ',');
   var truckAddress = truck['address'];
   var truckName = truck['name'];
   var truckModal = document.getElementById('truckModal');
@@ -25,22 +25,22 @@ var getTruck = function(truck, map, origin, radius) {
       hours: truckHours
     });
 
-    var modalString = 'Address: ' + newMarker.address + '\nName: ' + newMarker.name + '\nHours: ' + newMarker.hours + '\nFood: ' + newMarker.food;
+    var modalString = 'Address: ' + newMarker.address + '\nName: ' + newMarker.title + '\nHours: ' + newMarker.hours + '\nFood: ' + newMarker.food;
 
     newMarker.addListener('click', function() {
       console.log('modal triggered');
       truckModal.innerHTML = modalString;
       console.log(modalString);
-      truckModal.style.display = 'block';
+      truckModal.style = 'display: block';
     });
 
     truckModalClose.addEventListener('click', function() {
-      truckModal.style.display = 'none';
+      truckModal.style = 'display: none';
     });
 
     window.addEventListener('click', function(event) {
       if (event.target !== truckModal) {
-        truckModal.style.display = "none";
+        truckModal.style = 'display: none';
       };
     });
   };
