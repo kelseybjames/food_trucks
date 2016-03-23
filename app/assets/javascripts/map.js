@@ -70,8 +70,8 @@ function initMap(radius) {
 
   google.maps.event.addListener(map, 'click', function(event) {
     console.log('map clicked');
-    console.log(event.latLng);
-    marker.position = event.latLng;
+    console.log(event.latLng.lat());
+    marker.position = new google.maps.LatLng(event.latLng.lat(), event.latLng.lng());
   });
 
   getTrucks(map, myLatLng, radius);
