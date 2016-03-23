@@ -32,11 +32,11 @@ var getTruck = function(truck, map, origin, radius) {
       truckModal.style.display = 'block';
     });
 
-    truckModalClose.addListener('click', function() {
+    truckModalClose.addEventListener('click', function() {
       truckModal.style.display = 'none';
     });
 
-    window.addListener('click', function(event) {
+    window.addEventListener('click', function(event) {
       if (event.target !== truckModal) {
         truckModal.style.display = "none";
       };
