@@ -28,15 +28,15 @@ var getTruck = function(truck, map, origin, radius) {
     var modalString = 'Address: ' + newMarker.address + '\nName: ' + newMarker.name + '\nHours: ' + newMarker.hours + '\nFood: ' + newMarker.food;
 
     newMarker.addListener('click', function() {
-      truckModal.text(modalString);
+      truckModal.innerHTML = modalString;
       truckModal.style.display = 'block';
     });
 
-    truckModalClose.on('click', function() {
+    truckModalClose.addListener('click', function() {
       truckModal.style.display = 'none';
     });
 
-    window.on('click', function(event) {
+    window.addListener('click', function(event) {
       if (event.target !== truckModal) {
         truckModal.style.display = "none";
       };
