@@ -69,6 +69,8 @@ function initMap(radius) {
   });
 
   google.maps.event.addListener(map, 'click', function(event) {
+    console.log('map clicked');
+    console.log(event.latLng);
     marker.position = event.latLng;
   });
 
