@@ -10,7 +10,8 @@ var getTruck = function(truck, map, radius, origin) {
   var truckLongitude = Number(truck['longitude']);
   console.log('Truck latitude: ' + truckLatitude);
   console.log('Truck longitude: ' + truckLongitude);
-  var truckPosition = new google.maps.LatLng(truckLatitude, truckLongitude)
+  var truckPosition = new google.maps.LatLng(truckLatitude, truckLongitude);
+  console.log('Truck position: ' + truckPosition);
   var truckName = truck['name'];
   var distance = google.maps.geometry.spherical.computeDistanceBetween(truckPosition, origin);
   console.log(distance);
