@@ -14,12 +14,14 @@ Features implemented:
 
 Getting started
 ---------------
-[SF Food Trucks](https://kelsey-food-trucks.herokuapp.com/)
+You can visit the deployed site here: [SF Food Trucks](https://kelsey-food-trucks.herokuapp.com/)
 
-You'll see a page with an embedded map. The default marker is located at the Embarcadero BART Station, but clicking anywhere on the map will relocate the center.
+You'll see a page with an embedded map. The default marker is located at the Embarcadero BART Station, but clicking anywhere on the map will relocate the marker and recenter the map.
 
-Once the center is set, type the desired search radius (in meters) into the form below the map and click 'Search'.
+Once the marker is set at the desired location, type the desired search radius (in meters) into the form below the map and click 'Search for Food Trucks'.
 
-The map will reload, center itself on your click, and also display all food trucks within the given radius. The name of the food truck will be displayed when you hover over the tag.
+The map will reload, center itself on your click, and display all food trucks within the given radius. The name of the food truck will be displayed when you hover over the tag.
+
+When you click on a food truck's tag, a box will appear containing the name, address, operating hours, and food offerings of the given truck. You can click through the different tags, or click a blank area of the map to change the origin if you want to search again.
 
 Bon appetit!
